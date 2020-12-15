@@ -290,7 +290,7 @@ app.post("/changePw", (req, res) => {
       bcrypt.compare(oldPassword, dbPassword, (err, result) => {
         if (!result) res.redirect('/shtoLexues')
         else {
-
+          //kodi per me ndrru passwordin
         }
       })
     }
