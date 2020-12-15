@@ -273,5 +273,30 @@ app.post("/logout", (req, res) => {
   })
 })
 
+app.post("/changePw", (req, res) => {
+  const email = req.body.email
+  const oldPassword = req.body.oldPassword
+  const newPassword = req.body.newPassword
+
+  const isOnDbQuery = `SELECT email,password FROM mbikqyresit WHERE email="${email}"`
+  db.query(isOnDbQuery, (err, rezultati, kolonat) => {
+    if (rezultati.length === 0) {
+      res.redirect('/shtoLexues')
+    }
+    else {
+      console.log(rezultati)
+      const dbEmail = rezultati[0].email
+      const dbPassword = rezultati[0].password
+      bcrypt.compare(oldPassword, dbPassword, (err, result) => {
+        if (!result) res.redirect('/shtoLexues')
+        else {
+
+        }
+      })
+    }
+  })
+
+})
+
 const port = 3000;
 app.listen(port);

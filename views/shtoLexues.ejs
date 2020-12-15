@@ -52,7 +52,21 @@
         </form>
 
         <br>
-        <p><%- success %> </p>
+        <p>
+            <%- success %>
+        </p>
+    </center>
+
+
+    <br><br>
+
+    <center>
+        <form action="/changePw" method="POST">
+            <input type="email" name="email" class="form-control col-xl-3" placeholder="Email"> <br>
+            <input type="password" name="oldPassword" class="form-control col-xl-3" placeholder="Old Password"> <br>
+            <input type="password" name="newPassword" class="form-control col-xl-3" placeholder="New Password"> <br>
+            <input type="submit">
+        </form>
     </center>
 
     <!-- Bootstrap Scripts down -->
