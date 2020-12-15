@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <div style="margin-top: 5%;">
+            <h3>Shto nje mbikqyres (biblotekist) te ri</h3>
+            <form action="/shtoMbikqyresForm" method="POST">
+                <input type="text" name="emri" placeholder="emri"> <br><br>
+                <input type="text" name="mbiemri" placeholder="mbiemri"> <br><br>
+                <input type="text" name="email" placeholder="email"> <br><br>
+                <input type="text" name="password" placeholder="password"> <br><br>
+                <input type="submit" value="Shto"> <br>
+            </form>
+            <br>
+
+            <p style="color:red"><%- error %></p>
+        </div>
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img width="50" src="../static/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div style="display: flex;" class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"> Ballina <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li style="justify-content: space-around;" class="nav-item active">
+                    <a class="nav-link" href="/login"> <img width="30" src="../static/admin.png" alt=""> </a>
+                </li>
+
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+        </div>
+    </nav>
+
+    <div class="container" style="margin:5% auto;width: 60%;">
+        <h2 class="mb-4 text-center text-info">Kycu si biblotekist</h2>
+
+        <form id="forma1" action="/loginForm" method="POST">
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <input type="text" name="username" class="form-control text-center col-xl-4"
+                    placeholder="Emri i Perdoruesit"><br>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <input type="password" name="password" class="form-control text-center col-xl-4"
+                    placeholder="Fjalekalimi"><br>
+            </div>
+
+            <br>
+            <div class="text-center" style="margin: auto; width:50%;">
+                <input type="submit" class="btn btn-info" value="Login">
+                <br>
+
+                <%- error %>
+
+                <p id="forget" onclick="hide()">forget pw</p>
+        </form>
+        <br><br>
+
+
+
+        <div>
+            Forget PW?
+            <form action="/forgetPwForm" method="POST">
+                <input type="email" name="email" placeholder="email" class="">
+                <input class="btn btn-info" type="submit" name="" id="">
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+
+
+        function hide() {
+            document.getElementById('forma1').style.display = 'none'
+        }
+    </script>
+    </div>
+
+    <!-- Bootstrap Scripts down -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
