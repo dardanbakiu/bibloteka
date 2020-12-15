@@ -290,7 +290,11 @@ app.post("/changePw", (req, res) => {
       bcrypt.compare(oldPassword, dbPassword, (err, result) => {
         if (!result) res.redirect('/shtoLexues')
         else {
-          //kodi per me ndrru passwordin
+          bcrypt.hash(newPassword, 10, (err, hash) => {
+            const newPasswordQuery = `UPDATE mbikqyresit SET password="${hash}" WHERE email="${email}"`
+            db.execute(newPasswordQuery)
+            res.redirect('/shtoLexues')
+          })
         }
       })
     }
